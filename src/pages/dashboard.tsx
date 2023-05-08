@@ -29,7 +29,7 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Example() {
+export default function Dashboard() {
   return (
     <>
       {/*
@@ -52,7 +52,7 @@ export default function Example() {
                         width={32}
                         height={32}
                         className="h-8 w-8"
-                        src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                        src="/basketball.svg"
                         alt="Your Company"
                       />
                     </div>

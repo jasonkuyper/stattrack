@@ -1,28 +1,40 @@
-type PlayerStats = {
-  id: number;
-  firstName: string;
-  lastName: string;
-  ppg: string;
-  apg: string;
-  rpg: string;
-  fgPercentage: string;
-  threePercentage: string;
+import useSWR from "swr";
+
+// type PlayerStats = {
+//   id: number;
+//   firstName: string;
+//   lastName: string;
+//   ppg: string;
+//   apg: string;
+//   rpg: string;
+//   fgPercentage: string;
+//   threePercentage: string;
+// };
+
+const fetcher = async (url: string) => {
+  const response = await fetch(url);
+  const data = await response.json();
+  console.log(data);
+  return data.data;
 };
 
-export default function PlayerList(): JSX.Element {
-  const items: PlayerStats[] = [];
+export default function PlayerList() {
+  const items = [];
 
   //fetch data
+
+  // if (error) return "An error has occurred.";
+  // if (isLoading) return "Loading...";
 
   items.push({
     id: 10121309213,
     firstName: "LeBron",
     lastName: "James",
-    ppg: "27.5",
-    apg: "10.0",
-    rpg: "10.0",
-    fgPercentage: "50.5%",
-    threePercentage: "30.0%",
+    pts: "27.5",
+    ast: "10.0",
+    reb: "10.0",
+    fg_pct: "50.5%",
+    fg3_pct: "30.0%",
   });
 
   console.log(items);
@@ -41,11 +53,11 @@ export default function PlayerList(): JSX.Element {
             <span>
               {item.firstName} {item.lastName}
             </span>
-            <span>{item.ppg}</span>
-            <span>{item.apg}</span>
-            <span>{item.rpg}</span>
-            <span>{item.fgPercentage}</span>
-            <span>{item.threePercentage}</span>
+            <span>{item.pts}</span>
+            <span>{item.ast}</span>
+            <span>{item.reb}</span>
+            <span>{item.fg_pct}</span>
+            <span>{item.fg3_pct}</span>
           </li>
         ))}
       </ul>
