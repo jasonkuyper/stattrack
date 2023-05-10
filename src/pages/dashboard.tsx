@@ -224,7 +224,6 @@ export default function Dashboard() {
         <main>
           <div className="flex flex-col items-center mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
             <SearchPlayer />
-            <PlayerList />
           </div>
         </main>
       </div>

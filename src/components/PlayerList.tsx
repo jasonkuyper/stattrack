@@ -1,5 +1,5 @@
-import useSWR from "swr";
-
+import { PlayerStats } from "./SearchPlayer";
+import Image from "next/image";
 // type PlayerStats = {
 //   id: number;
 //   firstName: string;
@@ -11,53 +11,34 @@ import useSWR from "swr";
 //   threePercentage: string;
 // };
 
-const fetcher = async (url: string) => {
-  const response = await fetch(url);
-  const data = await response.json();
-  console.log(data);
-  return data.data;
-};
-
-export default function PlayerList() {
-  const items = [];
-
-  //fetch data
-
-  // if (error) return "An error has occurred.";
-  // if (isLoading) return "Loading...";
-
-  items.push({
-    id: 10121309213,
-    firstName: "LeBron",
-    lastName: "James",
-    pts: "27.5",
-    ast: "10.0",
-    reb: "10.0",
-    fg_pct: "50.5%",
-    fg3_pct: "30.0%",
-  });
-
-  console.log(items);
-
+export default function PlayerList({ players }: any) {
   return (
     <div
-      className="w-[50dvw] mt-4
+      className="w-[75dvw] mt-4
     "
     >
       <ul role="list" className="space-y-3 w-full">
-        {items.map((item) => (
+        {players.map((player: any) => (
           <li
-            key={item.id}
-            className="flex justify-around overflow-hidden bg-white px-4 py-4 shadow sm:rounded-md sm:px-6"
+            key={player.id}
+            className="flex items-center justify-around overflow-hidden bg-white px-4 py-4 shadow sm:rounded-md sm:px-6"
           >
             <span>
-              {item.firstName} {item.lastName}
+              <Image
+                alt="player headshot"
+                src={`https://cdn.nba.com/headshots/nba/latest/1040x760/${player.id}.png`}
+                width={100}
+                height={100}
+              />
             </span>
-            <span>{item.pts}</span>
-            <span>{item.ast}</span>
-            <span>{item.reb}</span>
-            <span>{item.fg_pct}</span>
-            <span>{item.fg3_pct}</span>
+            <span>
+              {player.firstName} {player.lastName}
+            </span>
+            <span>{player.pts} PTS</span>
+            <span>{player.ast} AST</span>
+            <span>{player.reb} REB</span>
+            <span>{player.fg_pct * 100} FG%</span>
+            <span>{player.fg3_pct * 100} 3 PT%</span>
           </li>
         ))}
       </ul>

@@ -15,6 +15,12 @@ const nextConfig = {
         port: "",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "cdn.nba.com",
+        port: "",
+        pathname: "/**",
+      },
     ],
   },
   reactStrictMode: true,

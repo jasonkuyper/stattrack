@@ -18,6 +18,10 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "ts-node": {
+    "esm": true,
+    "experimentalSpecifierResolution": "node"
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "prisma/seed.js"],
   "exclude": ["node_modules"]
 }

@@ -1,6 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -14,7 +11,7 @@ model Player {
   id             Int    @id
   firstName      String
   lastName       String
-  teamId         String
+  teamId         Int
   jersey         String
   pos            String
   heightFeet     String
@@ -24,4 +21,5 @@ model Player {
   yearsPro       String
   collegeName    String
   country        String
+  statsId        Int
 }
