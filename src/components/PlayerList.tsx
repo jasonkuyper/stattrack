@@ -38,7 +38,7 @@ export default function PlayerList({ players }: any) {
             <span>{player.ast} AST</span>
             <span>{player.reb} REB</span>
             <span>{player.fg_pct * 100} FG%</span>
-            <span>{player.fg3_pct * 100} 3 PT%</span>
+            <span>{player.fg3_pct * 100} 3PT%</span>
           </li>
         ))}
       </ul>

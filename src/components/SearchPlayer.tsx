@@ -47,7 +47,7 @@ export default function SearchPlayer() {
   const playerInput = useRef<HTMLInputElement>(null);
 
   const [players, setPlayers] = useState<any[]>([]);
-
+  console.log("players are: ", players);
   //OLD PARSE SEARCH
   // function parseSearch(string: string) {
   //   string = string.trim();
